@@ -127,8 +127,8 @@ var _              = require('lodash'),
                 },
                 livereload: {
                     files: [
-                        'content/themes/casper/assets/css/*.css',
-                        'content/themes/casper/assets/js/*.js',
+                        'content/themes/generous/assets/css/*.css',
+                        'content/themes/generous/assets/js/*.js',
                         'core/client/assets/css/*.css',
                         'core/built/scripts/*.js'
                     ],
@@ -1027,7 +1027,9 @@ var _              = require('lodash'),
         // ### Ember Build *(Utility Task)*
         // All tasks related to building the Ember client code including transpiling ES6 modules and building templates
         grunt.registerTask('emberBuildDev', 'Build Ember JS & templates for development',
-            ['clean:tmp', 'buildAboutPage', 'emberTemplates:dev', 'transpile', 'concat_sourcemap:dev', 'concat_sourcemap:tests']);
+            ['clean:tmp', 
+	     //'buildAboutPage',  //removed temporary
+	     'emberTemplates:dev', 'transpile', 'concat_sourcemap:dev', 'concat_sourcemap:tests']);
 
         // ### Ember Build *(Utility Task)*
         // All tasks related to building the Ember client code including transpiling ES6 modules and building templates
@@ -1156,7 +1158,7 @@ var _              = require('lodash'),
         // require a server restart for the changes to take effect) and also manage reloading the browser whenever
         // frontend code changes.
         //
-        // Note that the current implementation of watch only works with casper, not other themes.
+        // Note that the current implementation of watch only works with generous, not other themes.
         grunt.registerTask('dev', 'Dev Mode; watch files and restart server on changes',
            ['default', 'express:dev', 'watch']);
 
